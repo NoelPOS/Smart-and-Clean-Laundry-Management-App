@@ -1,0 +1,13 @@
+.oc-card{
+    background-color: #AAC4F9;
+    width: 90%;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 20px;
+    
+}
+
+.oc-status{
+    color: red;
+    font-size: 18px;
+}

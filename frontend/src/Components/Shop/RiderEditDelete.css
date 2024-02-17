@@ -1,0 +1,35 @@
+.red-input-text{
+    width: 300px;
+    height: 60px;
+    font-size: 20px;
+    color: #313131;
+    margin: 16px;
+    background-color: #F5F5F5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.red-input-img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    margin: 20px;
+}
+
+.red-input-submit{
+    width: 320px;
+    height: 60px;
+    font-size: 20px;
+    color: #313131;
+    background-color: #AAC4F9;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-top: 20px;
+}
+.red-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

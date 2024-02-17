@@ -1,0 +1,48 @@
+.home-container {
+  background-color: #fff;
+  min-height: 100vh;
+  padding: 10px;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.profile {
+  width: 4rem;
+  border-radius: 50%;
+}
+
+.home-img-container {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.rider {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.home-btn-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.home-btn {
+  padding: 10px;
+  width: 80%;
+  border-radius: 10px;
+  background-color: #93c5fd;
+  border: none;
+}
+
+.home-link {
+  text-decoration: none;
+}

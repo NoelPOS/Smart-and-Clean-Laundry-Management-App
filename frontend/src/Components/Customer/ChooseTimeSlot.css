@@ -1,0 +1,50 @@
+.cus-timeslot-label{
+    margin-top: 27px;
+    text-align: center;
+}
+.cus-timetable-div{
+    size: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.cus-timeslot-table{
+    border-spacing: 28px;
+    width: 100%;
+}
+.cus-available-time{
+    font-size:150%;
+    background-color: #DBEAFE;
+    text-align: center;
+    padding: 18px;
+    color: #777777;
+}
+.cus-available-time:hover{
+    background-color: #5EEAD4;
+    color: black;
+}
+.cus-date{
+    margin-left: 28px;
+    margin-top: 38px;
+    font-size:150%;
+    color: #777777;
+}
+.cus-btn-confirm{
+    background-color: #AAC4F9;
+    color: black;
+    height: 46px;
+    width: 220px;
+    font-size: x-large;
+    border-radius: 20px;
+}
+
+.cus-confirm-div{
+    justify-content: center;
+    display: flex;
+    height: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+
+ 

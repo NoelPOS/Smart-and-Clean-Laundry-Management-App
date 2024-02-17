@@ -1,0 +1,44 @@
+.cus-process-label{
+    text-align: center;
+}
+
+.cus-pro-num1-column,.cus-pro-num2-column,.cus-pro-num3-column,.cus-pro-num4-column{
+    margin: auto;
+    justify-content: space-around;
+}
+.cus-pro-circle1,.cus-pro-circle2, .cus-pro-circle3, .cus-pro-circle4  {
+    background-color: #DBEAFE;
+    border-radius: 80%;
+    width: 100px;
+    height: 100px;
+    border: 4px solid #93C5FD;
+    align-items: center;
+    display: flex;
+    flex: 0 0 auto;
+    justify-content: center;
+    margin: 43px; 
+}
+.cus-pro-circle1:hover,.cus-pro-circle2:hover, .cus-pro-circle3:hover, .cus-pro-circle4:hover {
+    background-color: #5EEAD4;
+}
+.p-num-row1,.p-num-row2{
+    display:flex;
+}
+
+.cus-pro-label1,.cus-pro-label2,.cus-pro-label3,.cus-pro-label1{
+    display: flex;
+    flex: 50%;
+    justify-content: space-around;
+}                         
+
+
+
+
+
+
+
+
+
+
+
+

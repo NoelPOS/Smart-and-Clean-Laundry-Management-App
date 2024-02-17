@@ -1,0 +1,26 @@
+.cus-order-div{
+    background-color: #DBEAFE;
+    width: 100%;
+    height: 100%;
+}
+
+.cus-rcard{
+    background-color: #93C5FD;
+    width: 90%;
+    align-items: center;
+    margin: auto;
+}
+
+.cus-btn-cnd{
+    display: flex;
+    justify-content: space-around;
+}
+
+.cus-btn-c,.cus-btn-d{
+    background-color: #AAC4F9;
+    color: black;
+    height: 46px;
+    width: 120px;
+    font-size: large;
+    border-radius: 20px;
+}

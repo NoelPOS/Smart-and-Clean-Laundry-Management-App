@@ -1,0 +1,12 @@
+.co-filter-btn{
+    margin: 20px 5px;
+    appearance: none;
+    border: none;
+    background-color: #AAC4F9;
+    border-radius: 2px;
+    padding: 5px;
+    color: #777777;
+}
+.co-active {
+    background-color: aquamarine;
+}

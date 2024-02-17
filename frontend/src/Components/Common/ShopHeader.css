@@ -1,0 +1,16 @@
+.sh-div{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    background-color: #93C5FD;
+    align-items: center;
+    font-family: 'Just Me Again Down Here', cursive;
+}
+
+.sh-link-logo{
+    text-decoration: none;
+    all: unset;
+    font-size: 42px;
+    color: #F5F5F5;
+    padding: 5px;
+}

@@ -1,0 +1,22 @@
+.sho-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+}
+.sho-btm{
+    width: 340px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: #AAC4F9;
+    border: none;
+    margin: 20px;
+
+}
+.sho-btm-link{
+    all: unset;
+    font-size: 16px;
+    color: #313131;
+}

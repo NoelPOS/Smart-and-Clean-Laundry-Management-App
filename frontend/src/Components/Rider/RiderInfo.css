@@ -1,0 +1,25 @@
+.rider-info-container {
+  padding: 15px;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.info {
+  background-color: #93c5fd;
+  padding: 0px 10px;
+  border-radius: 20px;
+}
+
+.rider-info-detail {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.rider-info-detail-btn {
+  padding-bottom: 10px;
+  text-decoration: none;
+}

@@ -1,0 +1,17 @@
+.receipt-table {
+    width: 100%;
+  }
+  
+  .receipt-table th,
+  .receipt-table td {
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .receipt-table td button {
+    margin-right: 5px;
+  }
+
+  .receipt-label{
+    text-align: center;
+  }

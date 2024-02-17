@@ -1,0 +1,63 @@
+.cus-chooseitems-label{
+    text-align: center;
+}
+.cus-itemstable-div{
+    display: flex;
+    justify-content: space-around;
+}
+.cus-items-table{
+    border-spacing: 13px;
+    width: 100%;
+}
+.cus-items{
+    background-color: #DBEAFE;
+    padding: 18px;
+    border-radius: 80%;
+    height: 90px;
+    width: 100px;
+    text-align: center;
+}
+.cus-items-label{
+    margin:10px;
+    padding-left: 20px;
+    font-size: larger;
+    text-align:justify;
+}
+.cus-btn-proceed-div{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    height: 50px;
+}
+.cus-btn-proceed{
+    background-color: #AAC4F9;
+    color: black;
+    height: 46px;
+    width: 220px;
+    font-size: x-large;
+    border-radius: 20px;
+}
+.cus-trouser,.cus-jacket,.cus-shirt,.cus-shorts,.cus-sweater,.cus-sweatshirt,.cus-polos,.cus-hoodie,.cus-tops,.cus-skirt,.cus-coat,.cus-dress,.cus-pajamas,.cus-jeans,.cus-bodysuit{
+    height: 50px;
+    width: 50px;
+}
+.cus-chooseitems-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Add any other styling for the main container */
+  }
+  
+  .cus-grid-item-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    /* Add any other styling for the grid item container */
+  }
+  
+  .cus-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Add any other styling for the grid items */
+  }

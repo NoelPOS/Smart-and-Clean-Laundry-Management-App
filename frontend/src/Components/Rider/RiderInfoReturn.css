@@ -1,0 +1,25 @@
+.rider-info-return-container {
+  padding: 15px;
+}
+
+.rider-info-return-info-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.rider-info-return-info {
+  background-color: #93c5fd;
+  padding: 0px 10px;
+  border-radius: 20px;
+}
+
+.rider-info-return-detail {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.rider-info-return-detail-btn {
+  padding-bottom: 10px;
+  text-decoration: none;
+}

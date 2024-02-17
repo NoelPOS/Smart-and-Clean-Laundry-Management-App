@@ -1,0 +1,34 @@
+.return-detail-container {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.return-detail-detail-container {
+  margin-top: 40px;
+  background-color: #93c5fd;
+  padding: 1px 10px;
+  border-radius: 10px;
+  margin-bottom: 90px;
+}
+
+.return-detail-btn-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.return-detail-btn {
+  background-color: #93c5fd;
+  border-radius: 10px;
+  padding: 15px;
+  border: none;
+  width: 70%;
+}
+
+.return-detail-link {
+  text-decoration: none;
+  font-weight: bold;
+}

@@ -1,0 +1,36 @@
+.rr-input-text{
+    width: 360px;
+    height: 60px;
+    font-size: 20px;
+    color: #313131;
+    margin: 16px;
+    background-color: #F5F5F5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.rr-input-submit{
+    width: 320px;
+    height: 60px;
+    font-size: 20px;
+    color: #313131;
+    background-color: #AAC4F9;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    display: block;
+    margin: 0 auto;
+}
+.rr-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rr-input-submit-link{
+    all: unset;
+    font-size: 16px;
+    color: #313131;
+}

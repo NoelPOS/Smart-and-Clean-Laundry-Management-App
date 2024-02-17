@@ -1,0 +1,32 @@
+.lo-ongoing-img{
+    width: 400px;
+    border-radius: 50%;
+}
+.lo-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+}
+.lo-prompt{
+    background-color: #AAC4F9;
+    width: 90%;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 20px;
+}
+.lo-btn{
+    width: 340px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: #AAC4F9;
+    border: none;
+    margin: 20px;
+
+}
+.lo-link{
+    all: unset;
+    font-size: 16px;
+    color: #313131;
+}

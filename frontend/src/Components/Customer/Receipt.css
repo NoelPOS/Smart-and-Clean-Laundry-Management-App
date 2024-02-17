@@ -1,0 +1,15 @@
+
+
+  .cus-btn-cc-container{
+    display: flex;
+    justify-content: space-around;
+  }
+  .btn-confirm,.btn-cancel{
+    background-color: #AAC4F9;
+    color: black;
+    height: 46px;
+    width: 120px;
+    font-size: large;
+    border-radius: 20px;
+  }
+  

@@ -1,0 +1,52 @@
+.user-profile {
+  margin-top: 200px;
+  margin-left: 25px;
+  background: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 20px;
+  max-width: 300px;
+}
+
+.avatar-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-avatar {
+  border-radius: 50%;
+  width: 100px;
+  height: auto;
+}
+
+.user-info input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.user-actions {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.save-btn,
+.delete-btn {
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.save-btn {
+  background-color: #3993f9; /* Adjust color as necessary */
+}
+
+.delete-btn {
+  background-color: #f74c5a; /* Adjust color as necessary */
+}

@@ -1,0 +1,24 @@
+.lf_img{
+    width: 360px;
+}
+.lf_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+}
+.lf_btn{
+    width: 340px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: #AAC4F9;
+    border: none;
+    margin: 20px;
+
+}
+.lf_link{
+    all: unset;
+    font-size: 16px;
+    color: #313131;
+}
