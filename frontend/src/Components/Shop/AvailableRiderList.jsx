@@ -4,9 +4,14 @@ import AvailableRiderCard from './AvailableRiderCard'
 export default function AvailableRiderList() {
   const riders = [
     {
-        "name": "Eroes",
-        "phone_number": "0651086432",
-        "email": "eroes@gmail.com",
+      "name": "Pen",
+      "phone_number": "065186403",
+      "email": "pen@gmail.com",
+  },
+    {
+        "name": "Luci",
+        "phone_number": "0618401046",
+        "email": "luci@gmail.com",
     }
   ]
   return (
