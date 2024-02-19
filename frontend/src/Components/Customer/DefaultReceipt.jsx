@@ -1,8 +1,8 @@
 import React from 'react';
-import "./ReceiptCard.css"
+import './DefaultReceipt.css';
 
 
-function ReceiptCard({ cartItems, removeFromCart, incrementCount, decrementCount, cartTotal }) {
+function DefaultReceipt({ cartItems, cartTotal }) {
   const sampleItems = [
     { name: 'Pajamas', price: 55, count: 2 },
     { name: 'Sweater', price: 56, count: 1 },
@@ -13,9 +13,9 @@ function ReceiptCard({ cartItems, removeFromCart, incrementCount, decrementCount
   const allItems = [...sampleItems];
 
   return (
-    <div className='receiptcard-container'>
-      <h2 className='receipt-label'>List of items</h2>
-      <table className="receipt-table">
+    <div className='cus-receiptcard-container'>
+      <h2 className='cus-receipt-label'>List of items</h2>
+      <table className="cus-receipt-table">
         <thead>
           <tr>
             <th>Item</th>
@@ -24,15 +24,13 @@ function ReceiptCard({ cartItems, removeFromCart, incrementCount, decrementCount
           </tr>
         </thead>
         <tbody>
+            {/* allItems ny yr mhr cartItems htae  */}
           {allItems && allItems.length > 0 ? (
             allItems.map((item, index) => (
               <tr key={index}>
                 <td>{item.name}</td>
                 <td>{item.price}</td>
-                <td><button onClick={() => incrementCount(index)}>+</button>  {item.count}  <button onClick={() => decrementCount(index)}>-</button></td>
-                <td>
-                <button onClick={() => removeFromCart(index)}>Remove</button>
-                </td>
+                <td> {item.count}</td>
               </tr>
             ))
           ) : (
@@ -48,4 +46,4 @@ function ReceiptCard({ cartItems, removeFromCart, incrementCount, decrementCount
   );
 }
 
-export default ReceiptCard;
+export default DefaultReceipt;

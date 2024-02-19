@@ -1,0 +1,31 @@
+.cus-add-default-label{
+    color: rgba(143, 143, 143, 0.75);
+    margin-left: 30px;
+    font-size: larger;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+.cus-add{
+    border: transparent;
+    height: 60px;
+    width: 90%;
+    background-color: #f5f5f5;
+    margin: 10px;
+    font-size: 20px;
+    padding: 10px;
+}
+.cus-sub-btn{
+    background-color: #AAC4F9;
+    color: #313131;
+    height: 60px;
+    width: 300px;
+    font-size: x-large;
+    border-radius: 20px;
+    border: transparent;
+}
+.cus-btn-sub-div{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

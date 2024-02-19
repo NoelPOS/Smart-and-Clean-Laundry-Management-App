@@ -1,12 +1,16 @@
 import React from 'react'
 import CustomerHeader from '../Common/CustomerHeader';
 import './ShowProcess.css';
+import process from './photos/process.jpg'
+
 export default function ShowProcess() {
   return (
         <div className='cus-show-p-div'>
             <CustomerHeader/>
         
          <h2 className='cus-process-label'>We are in the process of .......</h2>
+
+         <img src={process} alt="processing" className='cus-sp-icon' />
 
          <div className='p-num-row1'>
             <div className="cus-pro-num1-column">

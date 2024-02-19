@@ -35,6 +35,7 @@
     width: 220px;
     font-size: x-large;
     border-radius: 20px;
+    border: transparent;
 }
 
 .cus-confirm-div{

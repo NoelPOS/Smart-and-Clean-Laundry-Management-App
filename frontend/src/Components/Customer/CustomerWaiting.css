@@ -1,7 +1,8 @@
 .cus-wait-label{
     text-align: center;
-    font-size: x-large;
+    font-size: 25px;
     margin: 25px;
+    padding-bottom: 40px;
 }
 
 .cus-default-container{
@@ -25,6 +26,7 @@
     width: 120px;
     font-size: large;
     border-radius: 20px;
+    border: transparent;
 }
 .cus-delipickup-img{
     width: 90%;

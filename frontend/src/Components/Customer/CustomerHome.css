@@ -29,6 +29,7 @@
     width: 320px;
     border-radius: 20px;
     font-size: x-large;
+    border: transparent;
   }
   .cus-btn-div{
    justify-content: center;

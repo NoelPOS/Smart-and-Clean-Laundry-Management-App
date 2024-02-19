@@ -1,0 +1,18 @@
+.cus-receipt-table {
+    width: 100%;
+  }
+  
+  .cus-receipt-table th,.cus-receipt-table td{
+    padding: 8px;
+    text-align: center;
+  }
+  
+  
+  .cus-receipt-label{
+    text-align: center;
+  }
+
+  .cus-rtable-total{
+    text-align: end;
+    margin-right: 30px;
+  }

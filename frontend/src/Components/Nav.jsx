@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 export default function Nav() {
   return (
     <div>
-      <Link to="/customer/home">Customer Home</Link>
+      <Link to="/customer/login">Customer Home</Link>
       <br/>
       <Link to="/shop/home">Shop Home</Link>
       <br/>
