@@ -5,7 +5,8 @@ export default function OrderCard({orders, status}) {
   return (
       <div className='oc-card'>
         <p>Order Number: {orders.order_number}</p>
-        <p>Order time: {orders.order_time}</p>
+        <p>Pick Up time: {orders.order_time}</p>
+        <p>Pick Up date: {orders.order_date}</p>
         <p>Customer name: {orders.name}</p>
         <p>Phone Number: {orders.phone_number}</p>
         <p>Location: {orders.location}</p>

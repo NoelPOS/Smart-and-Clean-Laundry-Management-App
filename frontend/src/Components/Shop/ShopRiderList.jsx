@@ -4,15 +4,14 @@ import RiderCard from './RiderCard'
 export default function ShopRiderList() {
   const riders = [
     {
-        "name": "Elliot",
-        "phone_number": "0651086431",
-        "email": "elliot@gmail.com",
-        
-    },
+      "name": "Pen",
+      "phone_number": "065186403",
+      "email": "pen@gmail.com",
+  },
     {
-        "name": "Eroes",
-        "phone_number": "0651086432",
-        "email": "eroes@gmail.com",
+        "name": "Luci",
+        "phone_number": "0618401046",
+        "email": "luci@gmail.com",
     }
   ]
   return (
