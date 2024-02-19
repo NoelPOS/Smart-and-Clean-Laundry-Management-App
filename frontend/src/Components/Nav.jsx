@@ -8,7 +8,9 @@ export default function Nav() {
       <br/>
       <Link to="/shop/home">Shop Home</Link>
       <br/>
-      <Link to="Rider/RiderHomeScreen">Rider Home</Link>
+      {/* <Link to="Rider/RiderHomeScreen">Rider Home</Link> */}
+      {/* <Link to="Rider/RiderHomeScreen">Rider Home</Link> */}
+      <Link to='Rider'>Rider Home</Link>
     </div>
   )
 }

@@ -4,31 +4,30 @@ import { Link } from 'react-router-dom'
 
 const dummyData = [
   {
-    date: '11/2/2024',
-    orderNumber: '12345',
-    pickUpTime: '5:00 pm',
-    location: 'The porch',
+    date: '20/2/2024',
+    orderNumber: '0050',
+    pickUpTime: '5:00 PM',
+    location: 'Bang Bo, Samut Prakan, 10560, Origin Place Abac Bangna, 7th Floor',
   },
-  {
-    date: '11/3/2024',
-    orderNumber: '67890',
-    pickUpTime: '6:30 pm',
-    location: 'Front Door',
-  },
-  {
-    date: '11/4/2024',
-    orderNumber: '13579',
-    pickUpTime: '4:15 pm',
-    location: 'Backyard',
-  },
-  {
-    date: '11/5/2024',
-    orderNumber: '24680',
-    pickUpTime: '7:00 pm',
-    location: 'Garage',
-  },
+  // {
+  //   date: '21/2/2024',
+  //   orderNumber: '0026',
+  //   pickUpTime: '1:00 PM',
+  //   location: 'Bang Bo, Samut Prakan, 10560, Bann Pirawit, 2nd Floor',
+  // },
+  // {
+  //   date: '11/4/2024',
+  //   orderNumber: '0010',
+  //   pickUpTime: '10:00 AM',
+  //   location: 'The Rich',
+  // },
+  // {
+  //   date: '11/5/2024',
+  //   orderNumber: '0034',
+  //   pickUpTime: '7:00 PM',
+  //   location: 'Groovy',
+  // },
 ]
-
 function RiderInfo() {
   return (
     <div className='rider-info-container'>

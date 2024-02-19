@@ -7,12 +7,12 @@ function PickUpDetail() {
     <div className='pickup-detail-container'>
       <h1>Pick Up Detail</h1>
       <div className='detail-container'>
-        <h3>Name: Brandon</h3>
-        <h3>Phone: 123456789</h3>
-        <h3>Date: 11/2/2024</h3>
-        <h3>Order Number: 12345</h3>
-        <h3>Pick Up Time: 5:00 pm</h3>
-        <h3>Location: The porch</h3>
+      <h3>Name: Bryan</h3>
+        <h3>Phone: 0651086400</h3>
+        <h3>Date: 20/2/2024</h3>
+        <h3>Order Number: 0050</h3>
+        <h3>Pick Up Time: 5:00 PM</h3>
+        <h3>Location: Bang Bo, Samut Prakan, 10560, Origin Place Abac Bangna, 7th Floor</h3>
       </div>
       <div className='pickup-detail-btn-container'>
         <button className='pickup-detail-btn'>
