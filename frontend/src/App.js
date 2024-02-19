@@ -4,6 +4,10 @@ import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
 
 import Nav from './Components/Nav';
 
+import CustomerLogin from './Components/Customer/CustomerLogin';
+import CustomerRegister from './Components/Customer/CustomerRegister';
+import CustomerLocation from './Components/Customer/CustomerLocation';
+import CustomerProfile from './Components/Customer/CustomerProfile';
 import CusteomerHome from './Components/Customer/CusteomerHome';
 import CustomerHistory from './Components/Customer/CustomerHistory';
 import ChooseTimeSlot from './Components/Customer/ChooseTimeSlot';
@@ -13,6 +17,7 @@ import Receipt from './Components/Customer/Receipt';
 import CustomerOrderConfirmation from './Components/Customer/CustomerOrderConfirmation';
 import CustomerWaiting from './Components/Customer/CustomerWaiting';
 import FinalReceipt from './Components/Customer/FinalReceipt';
+import CustomerReceipt from './Components/Customer/CustomerReceipt';
 
 
 import ShopHome from './Components/Shop/ShopHome';
@@ -58,6 +63,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Nav />} />
+
+          <Route path="/customer/login" element={<CustomerLogin />} />
+          <Route path="/customer/register" element={<CustomerRegister/>} />
+          <Route path="/customer/location" element={<CustomerLocation/>} />
+          <Route path="/customer/profile" element={<CustomerProfile/>} />
           <Route path="/customer/home" element={<CusteomerHome />} />
           <Route path="/customer/showHistory" element={<CustomerHistory/>} />
           <Route path="/customer/chooseTimeSlot" element={<ChooseTimeSlot/>} />
@@ -67,6 +77,7 @@ function App() {
           <Route path="/customer/orderConfirmation" element={<CustomerOrderConfirmation/>}/>
           <Route path="/customer/finalreceipt" element={<FinalReceipt/>}/>
           <Route path="/customer/pickingup" element={<CustomerWaiting/>}/>
+          <Route path="/customer/orderhistory" element={<CustomerReceipt/>}/>
           
 
 

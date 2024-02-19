@@ -31,11 +31,12 @@
 }
 .cus-btn-proceed{
     background-color: #AAC4F9;
-    color: black;
+    color: #313131;
     height: 46px;
     width: 220px;
     font-size: x-large;
     border-radius: 20px;
+    border: transparent;
 }
 .cus-trouser,.cus-jacket,.cus-shirt,.cus-shorts,.cus-sweater,.cus-sweatshirt,.cus-polos,.cus-hoodie,.cus-tops,.cus-skirt,.cus-coat,.cus-dress,.cus-pajamas,.cus-jeans,.cus-bodysuit{
     height: 50px;
@@ -45,19 +46,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Add any other styling for the main container */
+   
   }
   
   .cus-grid-item-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
-    /* Add any other styling for the grid item container */
   }
   
   .cus-grid-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* Add any other styling for the grid items */
   }

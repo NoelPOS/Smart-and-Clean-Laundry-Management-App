@@ -1,0 +1,20 @@
+.cus-his-label{
+    color: #A3A3A3;
+    margin-left: 30px;
+}
+.cus-his-div{
+    margin: 30px;
+}
+.cus-ohistory{
+    background-color: #DBEAFE;
+    width: 300px;
+    padding: 30px;
+    font-size: 20px;
+    display: flex;
+}
+.cus-od{
+    display: flex;
+    text-align: flex-end;
+    justify-content: flex-end;
+    margin-top: 120px;
+}

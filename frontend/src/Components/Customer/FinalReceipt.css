@@ -2,3 +2,11 @@
     font-size: xx-large;
     text-align: center;
 }
+.plus-img-div img{
+    width: 40px;
+    height: 40px;
+}
+.plus-img-div{
+    display: flex;
+    justify-content: center;
+}
