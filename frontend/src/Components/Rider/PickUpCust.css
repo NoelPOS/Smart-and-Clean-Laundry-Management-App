@@ -2,15 +2,15 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 .pickup-cust-detail-container {
-  margin-top: 40px;
+  margin-top: 25px;
   background-color: #93c5fd;
   padding: 1px 10px;
   border-radius: 10px;
-  margin-bottom: 90px;
+  margin-bottom: 45px;
 }
 
 .pickup-cust-btn-container {

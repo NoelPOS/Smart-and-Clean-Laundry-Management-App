@@ -55,7 +55,7 @@ import RiderInfoReturn from './Components/Rider/RiderInfoReturn';
 import ReturnSuccess from './Components/Rider/ReturnSuccess';
 import ReportForm from './Components/Rider/ReportForm';
 import ReportSuccess from './Components/Rider/ReportSuccess';
-
+import Login from './Components/Rider/Login';
 
 function App() {
   return (
@@ -110,7 +110,7 @@ function App() {
 
           
           
-
+          <Route path='Rider' element={<Login />} />
           <Route path='Rider/RiderHomeScreen' element={<RiderPickupButton />} />
           <Route path='Rider/RiderHomeScreen/RiderProfile'element={<Profile />}/>
 
