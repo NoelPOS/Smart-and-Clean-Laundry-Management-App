@@ -41,9 +41,9 @@ const Login = () => {
               onChange={handlePasswordChange}
             />
 
-            <div className='forgot-password'>
+            {/* <div className='forgot-password'>
               <a href='/forgot-password'>Forgot Password?</a>
-            </div>
+            </div> */}
 
             <button type='submit'>
               <Link className='login-text' to='/Rider/RiderHomeScreen'>
