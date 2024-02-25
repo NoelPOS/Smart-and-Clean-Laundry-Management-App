@@ -3,6 +3,7 @@ import CustomerHeader from "../Common/CustomerHeader";
 import DefaultReceipt from "./DefaultReceipt";
 import "./FinalReceipt.css";
 import plus from './photos/add.png';
+import { Link } from "react-router-dom";
 
 export default function FinalReceipt(){
     return (
@@ -12,7 +13,12 @@ export default function FinalReceipt(){
             <div className="cus-rcard"><DefaultReceipt/></div>
             <p className="payment-label">Please upload your payment slip here</p>
             <div className="plus-img-div">
-                <button><img src={plus} alt="plus" /></button>
+                <input type="file"/>
+                <button>
+                    <Link to="/customer/home">
+                        <img src={plus} alt="plus" />
+                    </Link>
+                </button>
             </div>
         </div>
     )

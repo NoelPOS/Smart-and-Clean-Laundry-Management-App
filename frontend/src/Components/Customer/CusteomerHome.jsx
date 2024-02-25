@@ -26,7 +26,7 @@ function CustomerHome() {
        
         <div className="cus-userbar-show">
           <div className="cus-space"></div>
-          <h2 className="cus-username">Welcome bryan </h2>
+          <h2 className="cus-username">Welcome Brandon </h2>
           <Link to="/customer/profile"><img className="cus-user-avator-img" src={avator} alt="avator"/></Link>
         </div>
        

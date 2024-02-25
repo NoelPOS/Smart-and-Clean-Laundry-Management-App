@@ -26,14 +26,14 @@ function ReturnCust() {
             Success Return
           </Link>
         </button>
-        {/* <button className='return-cust-btn'>
+        <button className='return-cust-btn'>
           <Link
             to='/Rider/RiderHomeScreen/RiderInfoReturn/ReturnDetail/ReturnCust/ReportForm'
             className='return-cust-link'
           >
             Fail Return
           </Link>
-        </button> */}
+        </button>
       </div>
     </div>
   )

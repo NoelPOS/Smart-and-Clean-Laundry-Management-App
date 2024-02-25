@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './OrderItemCard.css'
 export default function OrderItemCard({orderItems}) {
     console.log(orderItems)
-    const [total, setTotal] = useState(0)
+    const [total, setTotal] = useState(120)
   return (
     <div className='oic_container'>
       <p>Order number 0001 items</p>
@@ -11,7 +11,7 @@ export default function OrderItemCard({orderItems}) {
           <p>{orderItem.product_name}   * {orderItem.quantity} </p>
       )})}
       <hr/>
-      <p>{total}</p>
+      <p>total = {total}</p>
     </div>
   )
 }

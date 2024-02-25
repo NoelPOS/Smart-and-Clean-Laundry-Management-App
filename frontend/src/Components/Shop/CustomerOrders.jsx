@@ -11,13 +11,13 @@ export default function CustomerOrders() {
   const orders = [
       {
           "order_number": "0050",
-          "name": "Bryan",
+          "name": "Brandon",
           "phone_number": "0651086400",
           "location": "Bang Bo, Samut Prakan, 10560, Origin Place Abac Bangna, 7th Floor",
           "order_time": "5:00 PM",
           "order_date": "20/2/2024",
           "rider": "",
-          "status" : "Rider Pick Up Ongoing"
+          "status" : "Just Ordered"
       },
       {
           "order_number": "0051",
@@ -97,7 +97,7 @@ export default function CustomerOrders() {
       "order_time": "9AM",
       "order_date": "18/2/2024",
       "rider": "Luci",
-      "status" : "Rider Pick Up Finish"
+      "status" : "Rider Pick Up Ongoing"
   },
   {
     "order_number": "0047",
