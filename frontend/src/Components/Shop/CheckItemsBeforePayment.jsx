@@ -24,7 +24,7 @@ export default function CheckItemsBeforePayment() {
                 <hr/>
                 <p>Total          =150 Baht</p>
             </div>
-            <button className='cibp-btn' onClick={()=> navigate('/shopCheckItems')}>
+            <button className='cibp-btn' onClick={()=> navigate('/shop/laundryItems')}>
                 Edit
             </button>
             <button className='cibp-btn' onClick={()=> navigate(`/shop/paymentWaiting/${id}`)}>

@@ -36,6 +36,8 @@ import LaundryProcess from './Components/Shop/LaundryProcess';
 import LaundryOngoing from './Components/Shop/LaundryOngoing';
 import LaundryFinish from './Components/Shop/LaundryFinish';
 
+import LaundryItems from './Components/Shop/LaundryItems';
+
 import PickUpOngoing from './Components/Shop/PickUpOngoing';
 import PickUpFinish from './Components/Shop/PickUpFinish'
 import CheckItemsBeforePayment from './Components/Shop/CheckItemsBeforePayment';
@@ -99,6 +101,7 @@ function App() {
           <Route path='shop/pickUpOngoing/:id' element={<PickUpOngoing/>}/>
           <Route path='shop/pickUpFinish/:id' element={<PickUpFinish/>}/>
           <Route path='shop/checkitems/:id' element={<CheckItemsBeforePayment/>}/>
+          <Route path='shop/laundryItems' element={<LaundryItems/>}/>
           <Route path='shop/paymentWaiting/:id' element={<PaymentWaiting/>}/>
 
           <Route path='shop/pickUp/confirmPayment/:id' element={<CustomerPaymentConfirm/>} />

@@ -33,7 +33,7 @@ export default function JustOrdered() {
         <h1>
             Orders in just ordered stage - {id}
         </h1>
-        <OrderItemCard orderItems={orderItems}/>
+        <OrderItemCard orderItems={orderItems} id={id}/>
         <button className='jo-btn-assign'>
             <Link to="/shop/riderList/available" className="jo-link">
                 Assign to riders
