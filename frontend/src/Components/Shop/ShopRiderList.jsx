@@ -1,23 +1,28 @@
 import React from 'react'
 import ShopHeader from '../Common/ShopHeader'
 import RiderCard from './RiderCard'
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 export default function ShopRiderList() {
-  const riders = [
-    {
-      "name": "Pen",
-      "phone_number": "065186403",
-      "email": "pen@gmail.com",
-  },
-    {
-        "name": "Luci",
-        "phone_number": "0618401046",
-        "email": "luci@gmail.com",
+  const [ridersList, setRiderList] = useState()
+  
+  const getRiders = async () => {
+    try {
+      const  data  = await axios.get("http://localhost:8080/api/shop/riders");
+      setRiderList(data.data);
+    } catch (err) {
+      alert("cannot get data");
+      console.log(err);
     }
-  ]
+  }
+  useEffect(() => {
+    getRiders();
+  }, [])
+  console.log(ridersList)
   return (
     <>
         <ShopHeader />
-        {riders.map(rider => {
+        {ridersList?.map(rider => {
           return <RiderCard  rider={rider} />;
       })}
         
