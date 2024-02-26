@@ -4,10 +4,28 @@ import { Link, useNavigate } from 'react-router-dom'
 import ShopHeader from '../Common/ShopHeader'
 import './CustomerOrders.css'
 import OrderCard from './OrderCard'
+import axios from "axios";
 
 export default function CustomerOrders() {
   const [orderState, setOrderState] = useState('Just Ordered')
+  const [orderApi, setOrderApi] = useState()
   const navigate = useNavigate();
+
+  const getOrders = async () => {
+    try {
+      const  data  = await axios.get("http://localhost:8080/api/shop/orders");
+      setOrderApi(data.data);
+    } catch (err) {
+      alert("cannot get data");
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    getOrders();
+    
+  }, []);
+  console.log(orderApi)
   const orders = [
       {
           "order_number": "0050",
@@ -181,10 +199,7 @@ export default function CustomerOrders() {
           })}
         </div>
         <h1>Orders in "{orderState}" stage</h1>
-        {orders.map(order => {
-          console.log(order.status)
-          console.log(orderState)
-          console.log('*****')
+        {orderApi?.map(order => {
           if (order.status.includes(orderState)) {
             return (
               <div onClick={() => handleNavigate(order.status, order.order_number) }><OrderCard orders={order} /></div>

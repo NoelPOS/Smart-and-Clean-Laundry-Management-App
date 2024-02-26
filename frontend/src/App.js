@@ -90,7 +90,7 @@ function App() {
           <Route path="shop/past/order" element={<OrderHistory/>} />
           <Route path="shop/create/timeslots" element={<CreateTimeSlot/>} />
           <Route path="shop/create/rider" element={<RiderRegisteration/>} />
-          <Route path="shop/riderDetails" element={<RiderEditDelete/>} />
+          <Route path="shop/riderDetails/:id" element={<RiderEditDelete/>} />
           <Route path="shop/riderList" element={<ShopRiderList/>} />
 
 

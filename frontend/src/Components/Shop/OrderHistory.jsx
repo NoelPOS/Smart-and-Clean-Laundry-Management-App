@@ -3,8 +3,34 @@ import { Link } from 'react-router-dom'
 import ShopHeader from '../Common/ShopHeader'
 import './OrderHistory.css'
 import OrderCard from './OrderCard'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 export default function OrderHistory() {
+  const [finishOrders, setFinishOrders] = useState()
+  // const getRiders = async () => {
+  //   try {
+  //     const  data  = await axios.get("http://localhost:8080/api/shop/riders");
+  //     setRiderList(data.data);
+  //   } catch (err) {
+  //     alert("cannot get data");
+  //     console.log(err);
+  //   }
+  // }
+  const getFinishOrders = async () => {
+    try {
+      const data = await axios.get('http://localhost:8080/api/shop/finishOrders');
+      setFinishOrders(data.data)
+    } catch(err) {
+      alert(err)
+    }
+  }
+
+  useEffect(() => {
+    getFinishOrders();
+  }, [])
+
+  console.log(finishOrders)
   const orders = [
     {
       "order_number": "0050",
@@ -131,11 +157,8 @@ export default function OrderHistory() {
     <div>
         <ShopHeader />
         <h3>Order histories</h3>
-        {orders.map(order => {
-          if (order.status === "finish") {
-            return <OrderCard  orders={order} />;
-          }
-          return null;
+        {finishOrders?.map(order => {
+          return <OrderCard  orders={order} />;
       })}
     </div>
   )
