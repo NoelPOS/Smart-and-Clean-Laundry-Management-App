@@ -1,14 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './JustOrdered.css'
 import { Link } from 'react-router-dom'
 import ShopHeader from '../Common/ShopHeader'
 import OrderItemCard from './OrderItemCard'
 import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react'
+import axios from 'axios'
 
 
 export default function JustOrdered() {
     const { id } = useParams();
     const navigate = useNavigate()
+    const [orderItemsById, setOrderItems] = useState()
+
+    const getOrdersById = async () => {
+        try {
+          const  data  = await axios.get(`http://localhost:8080/api/shop/getOrderItems/${id}`);
+          setOrderItems(data.data);
+        } catch (err) {
+          alert("cannot get data");
+          console.log(err);
+        }
+    }
+    useEffect(() => {
+        getOrdersById();
+        
+      }, [id])
+      console.log(orderItemsById)
     
     const orderItems = [
         {
@@ -33,11 +51,9 @@ export default function JustOrdered() {
         <h1>
             Orders in just ordered stage - {id}
         </h1>
-        <OrderItemCard orderItems={orderItems} id={id}/>
-        <button className='jo-btn-assign'>
-            <Link to="/shop/riderList/available" className="jo-link">
+        <OrderItemCard orderItems={orderItemsById} id={id}/>
+        <button className='jo-btn-assign' onClick={navigate(`/shop/riderList/available/${id}`)}>
                 Assign to riders
-            </Link>
         </button>
       
     </>

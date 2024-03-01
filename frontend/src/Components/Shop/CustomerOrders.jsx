@@ -163,10 +163,11 @@ export default function CustomerOrders() {
     if (status === 'Laundry Ongoing') {
       navigate(`/shop/laundryOngoing/${orderNo}`)
     }
-    if (status === 'Laundry Finished') {
+    if (status === 'Laundry Finish') {
       navigate(`/shop/laundryFinish/${orderNo}`)
     }
     if (status === 'Just Ordered') {
+      alert('Just Ordered')
       navigate(`/shop/customerOrder/${orderNo}`)
     }
     if (status === 'Rider return') {
@@ -200,9 +201,10 @@ export default function CustomerOrders() {
         </div>
         <h1>Orders in "{orderState}" stage</h1>
         {orderApi?.map(order => {
+          console.log(order)
           if (order.status.includes(orderState)) {
             return (
-              <div onClick={() => handleNavigate(order.status, order.order_number) }><OrderCard orders={order} /></div>
+              <div onClick={() => handleNavigate(order.status, order.order_id) }><OrderCard orders={order} /></div>
             );
           }
           return null;

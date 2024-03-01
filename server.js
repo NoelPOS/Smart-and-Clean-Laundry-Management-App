@@ -10,6 +10,7 @@ app.use(cors());
 const shopRoutes = require("./backend/shop/shopRoutes")
 
 
+
 app.get("/", (req, res) => {
   res.status(200).json({ result: true });
 });
