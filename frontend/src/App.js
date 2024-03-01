@@ -58,6 +58,7 @@ import ReturnSuccess from './Components/Rider/ReturnSuccess';
 import ReportForm from './Components/Rider/ReportForm';
 import ReportSuccess from './Components/Rider/ReportSuccess';
 import Login from './Components/Rider/Login';
+import AvailableRiderReturnList from './Components/Shop/AvailableRiderReturnList';
 
 function App() {
   return (
@@ -96,7 +97,8 @@ function App() {
 
           /*pick up*/
           <Route path="shop/customerOrder/:id" element={<JustOrdered/>} />
-          <Route path="shop/riderList/available" element={<AvailableRiderList/>} />
+          <Route path="shop/riderList/available/:id" element={<AvailableRiderList/>} />
+          <Route path="shop/riderList/available/return/:id" element={<AvailableRiderReturnList/>} />
           <Route path="shop/pickup/successful" element={<SuccessfulAssign/>} />
           <Route path='shop/pickUpOngoing/:id' element={<PickUpOngoing/>}/>
           <Route path='shop/pickUpFinish/:id' element={<PickUpFinish/>}/>

@@ -1,0 +1,13 @@
+.arl-btn{
+    width: 340px;
+    height: 48px;
+    border-radius: 10px;
+    background-color: #e2ebeb;
+    border: none;
+    margin: 20px;
+}
+.arl-link{
+    all: unset;
+    font-size: 18px;
+    color: #313131;
+}

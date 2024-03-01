@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import ShopHeader from '../Common/ShopHeader'
-import AvailableRiderCard from './AvailableRiderCard'
+import AvailableRiderCardRetrun from './AvailableRiderCardReturn'
 import axios from 'axios'
 import { useParams } from 'react-router'
-export default function AvailableRiderList() {
+export default function AvailableRiderReturnList() {
   const [ridersList, setRiderList] = useState()
   const {id} = useParams()
   console.log(id)
@@ -27,10 +27,7 @@ export default function AvailableRiderList() {
         <h1>Available Riders</h1>
         {ridersList?.map(rider => {
           return (
-
-              <AvailableRiderCard  rider={rider} />
-     
-          
+              <AvailableRiderCardRetrun  rider={rider} />
           )
       })}
         

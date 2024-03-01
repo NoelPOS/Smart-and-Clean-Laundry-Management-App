@@ -1,28 +1,26 @@
 import React from 'react'
-import './AvailableRiderCard.css'
+import './AvailableRiderCardReturn.css'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
 
-export default function AvailableRiderCard({rider}) {
+export default function AvailableRiderCardRetrun({rider}) {
   const {id} = useParams()
   const navigate = useNavigate()
 
-  const updatePickUpRider = async(id,rid) => {
+  const updateReturnRider = async(id,rid) => {
     try{
-      const result = await axios.put(`http://localhost:8080/api/shop/pickUpAssign/${id}`, {pick_up_rider : rid})
+      const result = await axios.put(`http://localhost:8080/api/shop/returnRiderAssign/${id}`, {return_rider : rid})
       console.log('update successful')
       alert('Assign successful.')
     }catch(error){
       console.log('update fail')
     }
-    
-
   }
 
   const handleClick = (rid) => {
     console.log(rid)
     console.log(id)
-    updatePickUpRider(id,rid)
+    updateReturnRider(id,rid)
     navigate('/shop/home')
 
 
