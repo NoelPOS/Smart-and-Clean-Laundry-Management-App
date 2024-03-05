@@ -1,65 +1,136 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import './CustomerProfile.css';
 import profile from './photos/profile.png';
 import pencil from './photos/pencil.png';
 import location from './photos/location.png';
 import phone from './photos/phone.png';
 import CustomerHeader from "../Common/CustomerHeader";
-import { useState } from "react";
+import { useState,useEffect } from "react";
+import axios from "axios";
+
 
 export default function CustomerProfile(){
-
+        const {id} = useParams();
+        const navigate = useNavigate();
         const [userInfo, setUserInfo] = useState({
-          name: 'Brandon',
-          phoneNumber: '0651086400',
-          location: 'Origin Place ABAC Bang na Soi Nawamin 1, Bang Bo',
+          name: '',
+          phoneNumber: '',
+          location: '',
           profilePhoto: profile
         });
+
+        useEffect(() => {
+          const fetchCustomerInfo = async () => {
+            try {
+              const response = await axios.get(`http://localhost:8080/api/shop/customer/${id}`);
+              if (Array.isArray(response.data) && response.data.length > 0) {
+                const customer = response.data[0];
+                const updatedUserInfo = {
+                  name: customer.customer_name ? customer.customer_name.trim() : '',
+                  phoneNumber: customer.customer_number ? customer.customer_number.trim() : '',
+                  location: customer.customer_address ? customer.customer_address.trim() : '',
+                  profilePhoto: profile // Assuming profile is a default photo
+                };
+                setUserInfo(updatedUserInfo);
+              } else {
+                console.error('Empty response or invalid data:', response.data);
+              }
+            } catch (error) {
+              console.error('Error fetching customer information:', error);
+            }
+          };
+        
+          fetchCustomerInfo();
+        }, [id]);
+        
+        
       
-        // Function to handle profile photo upload
-        const handlePhotoUpload = (event) => {
-          const file = event.target.files[0];
-          // Perform necessary file upload logic, e.g., using FormData or cloud storage SDK
-          // After successful upload, update the user information state with the new photo path
-          setUserInfo(prevState => ({
-            ...prevState,
-            profilePhoto: URL.createObjectURL(file)
-          }));
+        const deleteaccount = async () => {
+          try {
+            await axios.delete(`http://localhost:8080/api/shop/cusdelete/${id}`);
+            alert("Account deleted successfully");
+            navigate('/customer/login');
+          } catch (error) {
+            console.error("Error deleting account:", error);
+            alert(error);
+          }
         };
       
+
         // Function to handle name update
-const handleNameUpdate = () => {
-    const newName = prompt('Enter your new name:', userInfo.name);
-    if (newName !== null) {
-      setUserInfo(prevState => ({
-        ...prevState,
-        name: newName
-      }));
+const handleNameUpdate = async () => {
+  const newName = prompt('Enter your new name:', userInfo.name);
+  if (newName !== null) {
+    try {
+      // Send a request to update the name
+      const response = await axios.put(`http://localhost:8080/api/shop/updatecustomer/${id}`, { name: newName });
+      if (response.status === 200) {
+        // Update the state if the request was successful
+        setUserInfo(prevState => ({
+          ...prevState,
+          name: newName
+        }));
+        alert('Name updated successfully!');
+      } else {
+        alert('Failed to update name. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error updating name:', error);
+      alert('Failed to update name. Please try again.');
     }
-  };
+  }
+};
+
+// Similar functions for handling phone number and location updates
+
   
-  // Function to handle phone number update
-  const handlePhoneNumberUpdate = () => {
-    const newPhoneNumber = prompt('Enter your new phone number:', userInfo.phoneNumber);
-    if (newPhoneNumber !== null) {
-      setUserInfo(prevState => ({
-        ...prevState,
-        phoneNumber: newPhoneNumber
-      }));
+const handlePhoneNumberUpdate = async () => {
+  const newPhoneNumber = prompt('Enter your new phone number:', userInfo.phoneNumber);
+  if (newPhoneNumber !== null) {
+    try {
+      // Send a request to update the phone number
+      const response = await axios.put(`http://localhost:8080/api/shop/updatecustomer/${id}`, { phoneNumber: newPhoneNumber });
+      if (response.status === 200) {
+        // Update the state if the request was successful
+        setUserInfo(prevState => ({
+          ...prevState,
+          phoneNumber: newPhoneNumber
+        }));
+        alert('Phone number updated successfully!');
+      } else {
+        alert('Failed to update phone number. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error updating phone number:', error);
+      alert('Failed to update phone number. Please try again.');
     }
-  };
-  
-  // Function to handle location update
-  const handleLocationUpdate = () => {
-    const newLocation = prompt('Enter your new location:', userInfo.location);
-    if (newLocation !== null) {
-      setUserInfo(prevState => ({
-        ...prevState,
-        location: newLocation
-      }));
+  }
+};
+
+const handleLocationUpdate = async () => {
+  const newLocation = prompt('Enter your new location:', userInfo.location);
+  if (newLocation !== null) {
+    try {
+      // Send a request to update the address
+      const response = await axios.put(`http://localhost:8080/api/shop/updatecustomer/${id}`, { location: newLocation });
+      if (response.status === 200) {
+        // Update the state if the request was successful
+        setUserInfo(prevState => ({
+          ...prevState,
+          location: newLocation
+        }));
+        alert('Address updated successfully!');
+      } else {
+        alert('Failed to update address. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error updating address:', error);
+      alert('Failed to update address. Please try again.');
     }
-  };
+  }
+};
+
   
 
     return(
@@ -72,16 +143,7 @@ const handleNameUpdate = () => {
           src={userInfo.profilePhoto} 
           alt="Profile" 
         />
-        <label htmlFor="photo" style={{ position: 'absolute', top: '200px', right: '80px'}}>
-          <img src={pencil} alt="Edit" className="cus-edit" />
-        </label>
-        <input
-          type="file"
-          accept="image/*"
-          onChange={handlePhotoUpload}
-          style={{ display: 'none' }}
-          id="photo"
-        />
+
         </div>
 
         <div className="cus-name-div">
@@ -122,8 +184,8 @@ const handleNameUpdate = () => {
       </div>
             
         <div className="cus-vnd-btn-div">
-           <Link to="/customer/showHistory"><button className="btn-his">View History</button></Link> 
-            <Link to="/customer/login"><button className="btn-del">Delete Account</button></Link>
+          <button className="btn-his" onClick={deleteaccount} >Delete Account</button>
+            {/* <Link to="/customer/login"><button className="btn-del">Delete Account</button></Link> */}
         </div>
              
             

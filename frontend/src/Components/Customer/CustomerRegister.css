@@ -23,6 +23,15 @@
     font-size: 20px;
     padding: 10px;
 }
+.cus-add{
+    border: transparent;
+    height: 100px;
+    width: 90%;
+    background-color: #f5f5f5;
+    margin: 10px;
+    font-size: 20px;
+    padding: 10px;
+}
 .cus-btn-r{
     background-color: #AAC4F9;
     color: #313131;

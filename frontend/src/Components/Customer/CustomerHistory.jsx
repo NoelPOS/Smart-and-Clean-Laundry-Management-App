@@ -1,36 +1,48 @@
-import React from 'react'
-import CustomerHeader from '../Common/CustomerHeader'
-import CustomerReceipt from './CustomerReceipt';
+import React, { useEffect, useState } from 'react';
+import CustomerHeader from '../Common/CustomerHeader';
 import './CustomerHistory.css';
-import { Link } from 'react-router-dom';
+import {  useParams } from 'react-router-dom';
+import axios from 'axios';
 
 export default function History() {
-  const order =[
-    {
-      Number: '01283',
-      Date: '09/07/2024',
-      Time: '5:00 PM'
-    },
-    {
-      Number: '01298',
-      Date: '09/03/2024',
-      Time: '10:00 AM'
-    }
-  ]
+  const { id } = useParams();
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    // Fetch order history data from backend API
+    const fetchOrderHistory = async () => {
+      try {
+        const response = await axios.get(`http://localhost:8080/api/shop/getcusorderhistory/${id}`);
+        setOrders(response.data);
+      } catch (error) {
+        console.error('Error fetching order history:', error);
+      }
+    };
+
+    fetchOrderHistory();
+  }, [id]);
+
   return (
     <div>
-      <CustomerHeader/>
-        <h2 className='cus-his-label'>Order history</h2>
-        <div className="cus-his-div">
-          {order.map((orders)=>(
-            <p className='cus-ohistory'>
-                Order number: {orders.Number}<br></br>
-                Date : {orders.Date}<br></br>
-                Time : {orders.Time}
-                <div className='cus-od'><Link to="/customer/orderhistory" >see details</Link></div>
-            </p>
-          ))}
-        </div>
+      <CustomerHeader />
+      <h2 className='cus-his-label'>Order history</h2>
+      <div className="cus-his-div">
+        {orders.length > 0 ? (
+          orders.map((order) => (
+            <div className='cus-ohistory' key={order.order_id}>
+              <p>
+                Order number: {order.order_id}<br />
+                Pick up Date: {order.pick_up_date}<br />
+                Pick up Time: {order.pick_up_time}<br />
+                Pick up Rider: {order.pick_up_rider}<br />
+                Return Rider: {order.return_rider}<br />
+              </p>
+            </div>
+          ))
+        ) : (
+          <p>No order history available</p>
+        )}
+      </div>
     </div>
-  )
+  );
 }

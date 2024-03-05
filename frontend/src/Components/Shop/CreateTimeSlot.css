@@ -18,6 +18,13 @@
     padding: 18px;
     color: #777777;
 }
+.cus-available-time-created{
+    font-size:150%;
+    background-color: #dbdcdf;
+    text-align: center;
+    padding: 18px;
+    color: #777777;
+}
 .cus-available-time:hover{
     background-color: #5EEAD4;
     color: black;
@@ -41,6 +48,7 @@
 .cus-confirm-div{
     justify-content: center;
     display: flex;
+    flex-direction: column;
     height: 50px;
     margin-top: 30px;
     margin-bottom: 30px;

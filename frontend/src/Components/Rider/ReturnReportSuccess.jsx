@@ -1,11 +1,11 @@
 import React from 'react'
-import './ReportSuccess.css'
+import './ReturnReportSuccess.css'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
-function ReportSuccess() {
+function ReturnReportSuccess() {
   let { id } = useParams()
   const [orderApi, setOrderApi] = useState([])
   const getOrders = async () => {
@@ -35,4 +35,4 @@ function ReportSuccess() {
   )
 }
 
-export default ReportSuccess
+export default ReturnReportSuccess

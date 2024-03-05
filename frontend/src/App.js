@@ -59,6 +59,11 @@ import ReportForm from './Components/Rider/ReportForm';
 import ReportSuccess from './Components/Rider/ReportSuccess';
 import Login from './Components/Rider/Login';
 import AvailableRiderReturnList from './Components/Shop/AvailableRiderReturnList';
+import Register from './Components/Rider/Register'
+import ReturnReport from './Components/Rider/ReturnReport'
+import ReturnReportSuccess from './Components/Rider/ReturnReportSuccess'
+
+
 
 function App() {
   return (
@@ -70,18 +75,19 @@ function App() {
           <Route path="/customer/login" element={<CustomerLogin />} />
           <Route path="/customer/register" element={<CustomerRegister/>} />
           <Route path="/customer/location" element={<CustomerLocation/>} />
-          <Route path="/customer/profile" element={<CustomerProfile/>} />
-          <Route path="/customer/home" element={<CusteomerHome />} />
-          <Route path="/customer/showHistory" element={<CustomerHistory/>} />
-          <Route path="/customer/chooseTimeSlot" element={<ChooseTimeSlot/>} />
-          <Route path="/customer/showProcess" element={<ShowProcess/>} />
+          <Route path="/customer/profile/:id" element={<CustomerProfile/>} />
+          <Route path="/customer/home/:id" element={<CusteomerHome />} />
+          <Route path="/customer/showHistory/:id" element={<CustomerHistory/>} />
+          <Route path="/customer/chooseTimeSlot/:id" element={<ChooseTimeSlot/>} />
+          <Route path="/customer/showProcess/:id" element={<ShowProcess/>} />
           <Route path="/customer/chooseItems" element={<ChooseItems/>}/>
           <Route path="/customer/Receipt" element={<Receipt/>}/>
-          <Route path="/customer/orderConfirmation" element={<CustomerOrderConfirmation/>}/>
-          <Route path="/customer/finalreceipt" element={<FinalReceipt/>}/>
-          <Route path="/customer/pickingup" element={<CustomerWaiting/>}/>
-          <Route path="/customer/orderhistory" element={<CustomerReceipt/>}/>
+          <Route path="/customer/orderConfirmation/:id" element={<CustomerOrderConfirmation/>}/>
+          <Route path="/customer/finalreceipt/:id" element={<FinalReceipt/>}/>
           
+          <Route path="/customer/orderhistory" element={<CustomerReceipt/>}/>
+          <Route path="/customer/pickingup/:id" element={<CustomerWaiting/>}/>
+           
 
 
           {/* <Route path="/customer/home" element={<CusteomerHome />} /> */}
@@ -103,7 +109,7 @@ function App() {
           <Route path='shop/pickUpOngoing/:id' element={<PickUpOngoing/>}/>
           <Route path='shop/pickUpFinish/:id' element={<PickUpFinish/>}/>
           <Route path='shop/checkitems/:id' element={<CheckItemsBeforePayment/>}/>
-          <Route path='shop/laundryItems' element={<LaundryItems/>}/>
+          <Route path='shop/laundryItems/:id' element={<LaundryItems/>}/>
           <Route path='shop/paymentWaiting/:id' element={<PaymentWaiting/>}/>
 
           <Route path='shop/pickUp/confirmPayment/:id' element={<CustomerPaymentConfirm/>} />
@@ -115,53 +121,59 @@ function App() {
 
           
           
-          <Route path='Rider' element={<Login />} />
+          <Route path='Rider' element={<Register />} />
+          <Route path='Rider/login' element={<Login />} />
           <Route path='Rider/RiderHomeScreen' element={<RiderPickupButton />} />
-          <Route path='Rider/RiderHomeScreen/RiderProfile'element={<Profile />}/>
-
           <Route
-            path='Rider/RiderHomeScreen/RiderInfo'
-            element={<RiderInfo />}
+            path='Rider/RiderHomeScreen/RiderProfile/:id'
+            element={<Profile />}
           />
           <Route
-            path='Rider/RiderHomeScreen/RiderInfoReturn'
+            path='Rider/RiderHomeScreen/RiderReturn/:id'
             element={<RiderInfoReturn />}
           />
           <Route
-            path='Rider/RiderHomeScreen/RiderInfo/PickUpDetail'
-            element={<PickUpDetail />}
-          />
-          <Route
-            path='Rider/RiderHomeScreen/RiderInfoReturn/ReturnDetail'
+            path='Rider/RiderHomeScreen/RiderInfoReturn/:id'
             element={<ReturnDetail />}
           />
           <Route
-            path='Rider/RiderHomeScreen/RiderInfo/PickUpDetail/PickUpCust'
-            element={<PickUpCust />}
-          />
-          <Route
-            path='Rider/RiderHomeScreen/RiderInfoReturn/ReturnDetail/ReturnCust'
+            path='Rider/RiderHomeScreen/RiderInfoReturn/ReturnDetail/ReturnCust/:id'
             element={<ReturnCust />}
           />
           <Route
-            path='Rider/RiderHomeScreen/RiderInfo/PickUpDetail/PickUpCust/PickUpSuccess'
+            path='Rider/RiderHomeScreen/RiderInfoReturn/ReturnDetail/ReturnCust/ReturnSuccess/:id'
+            element={<ReturnSuccess />}
+          />
+          <Route path='/Rider' element={<Register />} />
+          <Route path='/Rider/:id' element={<RiderPickupButton />} />
+          <Route path='/Rider/RiderHomeScreen/:id' element={<RiderInfo />} />
+          <Route
+            path='/Rider/RiderHomeScreen/RiderInfo/:id'
+            element={<PickUpDetail />}
+          />
+          <Route
+            path='/Rider/RiderHomeScreen/RiderInfo/PickUpDetail/PickUpCust/:id'
+            element={<PickUpCust />}
+          />
+          <Route
+            path='/Rider/RiderHomeScreen/RiderInfo/PickUpDetail/PickUpCust/PickUpSuccess/:id'
             element={<PickUpSuccess />}
           />
           <Route
-            path='Rider/RiderHomeScreen/RiderInfoReturn/ReturnDetail/ReturnCust/ReturnSuccess'
-            element={<ReturnSuccess />}
-          />
-          <Route
-            path='Rider/RiderHomeScreen/RiderInfoReturn/ReturnDetail/ReturnCust/ReportForm'
+            path='/Rider/RiderHomeScreen/RiderInfo/PickUpDetail/PickUpCust/ReportForm/:id'
             element={<ReportForm />}
           />
           <Route
-            path='Rider/RiderHomeScreen/RiderInfo/PickUpDetail/PickUpCust/ReportForm'
-            element={<ReportForm />}
-          />
-          <Route
-            path='Rider/RiderHomeScreen/RiderInfo/PickUpDetail/PickUpCust/ReportForm/ReportSuccess'
+            path='/Rider/RiderHomeScreen/RiderInfo/PickUpDetail/PickUpCust/ReportForm/ReportSuccess/:id'
             element={<ReportSuccess />}
+          />
+          <Route
+            path='/Rider/RiderHomeScreen/RiderInfoReturn/ReturnDetail/ReturnCust/ReportForm/:id'
+            element={<ReturnReport />}
+          />
+          <Route
+            path='/Rider/RiderHomeScreen/RiderInfoReturn/ReturnDetail/ReturnCust/ReportForm/ReportSuccess/:id'
+            element={<ReturnReportSuccess />}
           />
         </Routes>
       </BrowserRouter>

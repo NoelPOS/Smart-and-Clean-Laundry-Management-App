@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-const ReportForm = () => {
+const PickUpReport = () => {
   const navigate = useNavigate()
   let { id } = useParams()
   const [reason, setReason] = useState('')
@@ -14,7 +14,7 @@ const ReportForm = () => {
     e.preventDefault()
     try {
       const data = await axios.put(
-        `http://localhost:8080/api/shop/riderorders/orderDetail/orderstatus/orderreport/${id}`,
+        `http://localhost:8080/api/shop/riderorders/orderDetail/orderstatus/orderreportsuccess/${id}`,
         { reason }
       )
     } catch (err) {
@@ -37,7 +37,7 @@ const ReportForm = () => {
         <button type='submit' className='submit-button' onClick={handleSubmit}>
           <Link
             className='submit-button-link'
-            to={`/Rider/RiderHomeScreen/RiderInfo/PickUpDetail/PickUpCust/ReportForm/ReportSuccess/${id}`}
+            to={`/Rider/RiderHomeScreen/RiderInfo/PickUpDetail/PickUpCust/ReportForm/PickUpReportSuccess/${id}`}
           >
             Submit
           </Link>
@@ -47,4 +47,4 @@ const ReportForm = () => {
   )
 }
 
-export default ReportForm
+export default PickUpReport

@@ -1,10 +1,11 @@
 import React from 'react';
 import CustomerHeader from '../Common/CustomerHeader';
 import "./CustomerWaiting.css"
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import delivery from './photos/delivery.jpg';
 
 export default function CustomerWaiting(){
+    const {id} = useParams()
     return(
         <div className='cus-waiting-div'>
             <CustomerHeader/>
@@ -19,8 +20,7 @@ export default function CustomerWaiting(){
             </div>
 
         <div className='cus-btn-okupdate'>
-            <Link to="/customer/finalreceipt"><button className='cus-btn-ok'>OK</button></Link> 
-            <Link to="/customer/chooseItems"><button className='cus-btn-update'>Update</button></Link>
+            <Link to={`/customer/home/${id}`}><button className='cus-btn-ok'>Go back to home</button></Link> 
         </div>
 
         </div>

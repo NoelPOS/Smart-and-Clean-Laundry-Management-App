@@ -13,6 +13,10 @@ export default function OrderCard({orders, status}) {
         <p className='oc-status'>Status: {orders.status}</p>
         <p>Pick Up Rider: {orders.pick_up_rider_name}</p>
         <p>Return Rider: {orders.return_rider_name}</p>
+        <p>Return Date: {orders.return_date}</p>
+        <p>Return Time: {orders.return_time}</p>
+        <p>Pick Up Report : {orders.pick_up_report}</p>
+        <p>Return report: {orders.return_report}</p>
 
       </div>
     );

@@ -2,13 +2,16 @@ import React from 'react'
 import rider from './rider3.jpg'
 import profile from './profile.jpg'
 import { Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import './RiderHomeScreen.css'
 
 export default function RiderPickupButton() {
+  const { id } = useParams()
+  console.log(id)
   return (
     <div className='home-container'>
       <div className='profile-container'>
-        <Link to='/Rider/RiderHomeScreen/RiderProfile'>
+        <Link to={`/Rider/RiderHomeScreen/RiderProfile/${id}`}>
           <img className='profile' src={profile} alt='' />
         </Link>
       </div>
@@ -19,14 +22,14 @@ export default function RiderPickupButton() {
       </div>
       <div className='home-btn-container'>
         <button className='home-btn'>
-          <Link className='home-link' to='/Rider/RiderHomeScreen/RiderInfo'>
+          <Link className='home-link' to={`/Rider/RiderHomeScreen/${id}`}>
             Pickup from customer
           </Link>
         </button>
         <button className='home-btn'>
           <Link
             className='home-link'
-            to='/Rider/RiderHomeScreen/RiderInfoReturn'
+            to={`/Rider/RiderHomeScreen/RiderReturn/${id}`}
           >
             Return to customer
           </Link>

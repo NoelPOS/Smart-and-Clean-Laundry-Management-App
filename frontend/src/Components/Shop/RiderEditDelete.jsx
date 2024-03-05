@@ -1,67 +1,116 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import axios from 'axios';
-import ShopHeader from '../Common/ShopHeader';
-import './RiderEditDelete.css';
-import profile from '../../source/avatar.jpg';
+import React, { useState, useEffect } from 'react'
+import './RiderEditDelete.css'
+import avatar from '../../Components/Rider/avatar.jpg'
+import { useParams } from 'react-router'
+import axios from 'axios'
+import { useNavigate } from 'react-router'
 
-export default function RiderEditDelete() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const [rider, setRider] = useState(null);
-
-  const getRiderDetails = async () => {
-    try {
-      const response = await axios.get(`http://localhost:8080/api/shop/riders/${id}`);
-      setRider(response.data);
-    } catch (error) {
-      console.error('Error fetching rider details:', error);
-      alert("Cannot get data");
-    }
-  };
-
-  const deleteRider = async () => {
-    try {
-      await axios.delete(`http://localhost:8080/api/shop/rider/${id}`);
-      alert("Rider deleted successfully");
-      navigate('/shop/riderList');
-    } catch (error) {
-      console.error("Error deleting rider:", error);
-      alert(error);
-    }
-  };
+const Profile = () => {
+  const { id } = useParams()
+  const [orderApi, setOrderApi] = useState([])
+  const [userName, setUserName] = useState('')
+  const [userPhone, setUserPhone] = useState('')
+  const [userEmail, setUserEmail] = useState('')
+  const navigate = useNavigate()
 
   useEffect(() => {
-    getRiderDetails();
-  }, [id]);
+    const getOrders = async () => {
+      try {
+        const { data } = await axios.get(
+          `http://localhost:8080/api/shop/riders/${id}`
+        )
+        setOrderApi(data)
+        // Update state here after data is fetched
+        setUserName(data[0]?.rider_name || '') // Use optional chaining and fallback to an empty string
+        setUserPhone(data[0]?.rider_number || '')
+        setUserEmail(data[0]?.rider_email || '')
+        console.log(data)
+      } catch (err) {
+        alert('cannot get data')
+        console.log(err)
+      }
+    }
 
-  console.log('Rider:', rider);
+    getOrders()
+  }, [id]) // Dependency array, re-run if id changes
+
+  const handleUserNameChange = (e) => {
+    setUserName(e.target.value)
+  }
+
+  const handleUserPhoneChange = (e) => {
+    setUserPhone(e.target.value)
+  }
+
+  const handleUserEmailChange = (e) => {
+    setUserEmail(e.target.value)
+  }
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.put(
+        `http://localhost:8080/api/shop/updaterider/${id}`,
+        {
+          rider_name: userName,
+          rider_number: userPhone,
+          rider_email: userEmail,
+        }
+      )
+      console.log('Update successful:', response.data)
+      navigate(`/shop/home`)
+    } catch (err) {
+      console.error('Update failed:', err)
+      alert('cannot get data')
+      navigate(`/shop/home`)
+    }
+  }
+
+  const handleDeleteSubmit = async () => {
+    try {
+      const { data } = await axios.delete(
+        `http://localhost:8080/api/shop/deleterider/${id}`
+      )
+      // navigate(`Rider`)
+      console.log(data)
+    } catch (err) {
+      alert('cannot get data')
+      console.log(err)
+    }
+  }
 
   return (
-    <>
-      <ShopHeader />
-      {rider && (
-        <form className='red-form'>
-          <img src={profile} className='red-input-img' alt='Rider Profile' />
-          
-          <span>Rider name : </span>
-          <input 
-            value={rider[0]?.rider_name || ''}
-            
-          /><br/>
-          <span>Rider number : </span>
-          <input 
-            value={rider[0]?.rider_number || ''}
-            
-          /><br/>
-          <span>Rider email : </span>
-          <input 
-            value={rider[0]?.rider_email || ''}
-            
-          /><br/>      
-          <button type='button' className='red-input-submit' onClick={deleteRider}>Delete</button>
-        </form>
-      )}
-    </>
-  );
+    <div className='user-profile'>
+      <div className='avatar-container'>
+        <img src={avatar} alt='User Avatar' className='user-avatar' />
+      </div>
+      <div className='user-info'>
+        <div className='user-name'>
+          <input type='text' value={userName} onChange={handleUserNameChange} />
+        </div>
+        <div className='user-phone'>
+          <input
+            type='text'
+            value={userPhone}
+            onChange={handleUserPhoneChange}
+          />
+        </div>
+        <div className='user-email'>
+          <input
+            type='text'
+            value={userEmail}
+            onChange={handleUserEmailChange}
+          />
+        </div>
+      </div>
+      <div className='user-actions'>
+        <button onClick={handleSubmit} className='save-btn'>
+          Save changes
+        </button>
+        <button onClick={handleDeleteSubmit} className='delete-btn'>
+          Delete Account
+        </button>
+      </div>
+    </div>
+  )
 }
+
+export default Profile

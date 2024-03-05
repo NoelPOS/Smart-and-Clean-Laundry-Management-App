@@ -1,32 +1,55 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './ReturnDetail.css'
+import './PickUpDetail.css'
+import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 function ReturnDetail() {
+  const { id } = useParams()
+  const [orderApi, setOrderApi] = useState([])
+  const getOrders = async () => {
+    try {
+      const data = await axios.get(
+        `http://localhost:8080/api/shop/riderorders/orderDetail/${id}`
+      )
+      setOrderApi(data.data)
+    } catch (err) {
+      alert('cannot get data')
+      console.log(err)
+    }
+  }
+
+  useEffect(() => {
+    getOrders()
+  }, [])
+  console.log(orderApi)
+
   return (
-    <div className='return-detail-container'>
+    <div className='pickup-detail-container'>
       <h1>Return Detail</h1>
-      <div className='return-detail-detail-container'>
-        <h3>Name: Johnson</h3>
-        <h3>Phone: 0960090059</h3>
-        <h3>Date: 18/2/2024</h3>
-        <h3>Order Number: 0040</h3>
-        <h3>Pickup Time: 7:00 PM</h3>
-        <h3>Location: Bang Bo, Samut Prakan, 10560, The Rich Abac, 4th Floor</h3>
+
+      <div className='detail-container'>
+        <h3>Name: {orderApi[0]?.customer_name}</h3>
+        <h3>Phone: {orderApi[0]?.customer_number}</h3>
+        <h3>Date: {orderApi[0]?.pick_up_date}</h3>
+        <h3>Order Number: {orderApi[0]?.order_id}</h3>
+        <h3>Pick Up Time: {orderApi[0]?.pick_up_time}</h3>
+        <h3>Address: {orderApi[0]?.customer_address}</h3>
       </div>
-      <div className='return-detail-btn-container'>
-        <button className='return-detail-btn'>
+      <div className='pickup-detail-btn-container'>
+        <button className='pickup-detail-btn'>
           <Link
-            className='return-detail-link'
-            to='/Rider/RiderHomeScreen/RiderInfoReturn/ReturnDetail/ReturnCust'
+            className='pickup-detail-link'
+            to={`/Rider/RiderHomeScreen/RiderInfoReturn/ReturnDetail/ReturnCust/${id}`}
           >
             Return to customer
           </Link>
         </button>
-        <button className='return-detail-btn'>
-          <Link 
-          className='return-detail-link' 
-          to='/Rider/RiderHomeScreen/RiderInfoReturn'
+        <button className='pickup-detail-btn'>
+          <Link
+            className='pickup-detail-link'
+            to={`/Rider/RiderHomeScreen/RiderReturn/${orderApi[0]?.return_rider}`}
           >
             Cancel
           </Link>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate, Link } from 'react-router-dom' // Import Link from 'react-router-dom'
-import './RiderRegisteration.css'
+import './Register.css'
 
 const Register = () => {
   const navigate = useNavigate()
@@ -19,7 +19,7 @@ const Register = () => {
         riderNumber,
         rider_password: password,
       })
-      navigate('/shop/home') // Redirect to login upon successful registration
+      navigate('login') // Redirect to login upon successful registration
     } catch (error) {
       console.error(error) // Handle error
     }
@@ -31,7 +31,6 @@ const Register = () => {
 
   return (
     // Inside the return statement of Register.jsx
-    
     <div className='container'>
       <form onSubmit={handleSubmit}>
         <div>
@@ -69,6 +68,12 @@ const Register = () => {
         <button type='submit'>Register</button>
       </form>
 
+      <p>
+        Already have an account?{' '}
+        <button className='go-to-login-btn' onClick={handleGoToLogin}>
+          Go to Login
+        </button>
+      </p>
     </div>
   )
 }

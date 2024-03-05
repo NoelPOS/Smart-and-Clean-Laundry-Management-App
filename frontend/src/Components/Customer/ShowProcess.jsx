@@ -2,8 +2,15 @@ import React from 'react'
 import CustomerHeader from '../Common/CustomerHeader';
 import './ShowProcess.css';
 import process from './photos/process.jpg'
+import { Navigate, useNavigate, useParams } from 'react-router';
 
 export default function ShowProcess() {
+  const {id} = useParams()
+  const navigate = useNavigate()
+
+  const goToBills = async() => [
+    navigate(`/customer/finalreceipt/${id} `)
+  ]
   return (
         <div className='cus-show-p-div'>
             <CustomerHeader/>
@@ -17,9 +24,9 @@ export default function ShowProcess() {
               <h3 className='cus-pro-circle1'>01</h3>
               <h3 className='cus-pro-label1'>Coming to pickup</h3>
             </div>
-            <div className="cus-pro-num2-column">
+            <div className="cus-pro-num2-column" onClick={goToBills}>
               <h3 className='cus-pro-circle2'>02</h3>
-              <h3 className='cus-pro-label2'>Sorting</h3>
+              <h3  className='cus-pro-label2'>Sorting</h3>
             </div>
           </div>
 

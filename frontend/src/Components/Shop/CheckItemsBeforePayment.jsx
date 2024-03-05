@@ -54,7 +54,7 @@ export default function CheckItemsBeforePayment() {
             <h3>Check before proceed to the payment </h3>
             <OrderItemCard orderItems={orderItemsById} id={id}/>
             
-            <button className='cibp-btn' onClick={()=> navigate('/shop/laundryItems')}>
+            <button className='cibp-btn' onClick={()=> navigate(`/shop/laundryItems/${id}`)}>
                 Edit
             </button>
             <button className='cibp-btn' onClick={sentPaymentSlip}>

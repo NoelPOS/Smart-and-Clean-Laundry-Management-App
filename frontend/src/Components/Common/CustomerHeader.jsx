@@ -5,7 +5,7 @@ import './CustomerHeader.css'
 export default function CustomerHeader() {
   return (
     <div className='cus-div'>
-        <Link className='cus-link-logo' to="/customer/home">Smart and Clean</Link>
+        <span className='cus-link-logo'>Smart and Clean</span>
     </div>
   )
 }
